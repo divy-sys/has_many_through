@@ -1,0 +1,13 @@
+<%= form_with(model: @patient) do |patient| %>
+
+  <h3>Name </h3>
+  <p><%=patient.text_field :name %></p>
+
+  <h3>Email</h3>
+  <p><%=patient.text_field :email  %></p>
+
+  <h3>Age</h3>
+  <p><%=patient.text_field :age %></p>
+
+  <%= patient.submit  %>
+  <% end %>

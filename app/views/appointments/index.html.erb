@@ -1,0 +1,12 @@
+<h1>Appointments Information </h1>
+
+<% @appointments.each do |apt| %>
+
+
+<p>Name: <%= doctor.name %></p>
+<p>Email: <%= doctor.email %></p>
+
+<%= link_to "Show", appointment_path(apt) %> 
+<%= link_to "Edit", edit_appointment_path(apt) %>
+<%= link_to "delete", appointment_path(apt), data: {turbo_method: :delete, turbo_confirm: "Are you sure want to delete ?"} %>
+<% end %>

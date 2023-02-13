@@ -1,0 +1,15 @@
+<h1>Doctors Information </h1>
+
+<%= link_to "Create new doctor", new_doctor_path %>
+<%= link_to "Create new Patient", new_patient_path %>
+
+<% @doctors.each do |doctor| %>
+
+
+<p>Name: <%= doctor.name %></p>
+<p>Email: <%= doctor.email %></p>
+
+<%= link_to "Show", doctor_path(doctor)  %> 
+<%= link_to "Edit", edit_doctor_path(doctor) %>
+<%= link_to "delete", doctor_path(doctor) , data: {turbo_method: :delete, turbo_confirm: "Are you sure want to delete ?"} %>
+<% end %>
