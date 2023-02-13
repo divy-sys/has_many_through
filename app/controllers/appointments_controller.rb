@@ -1,4 +1,4 @@
-class AppointmentController < ApplicationController
+class AppointmentsController < ApplicationController
   before_action :find_appointment, only: [:show, :edit, :update, :destroy]
   def index
     @appointments = Appointment.all
@@ -38,6 +38,6 @@ class AppointmentController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:name, :email)
+    params.require(:appointment).permit(:doctor_id, :patient_id, :appointment_date)
   end
 end
